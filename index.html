@@ -52,24 +52,32 @@
           <div class="flex space-x-4 md:space-x-8 text-sm md:text-base font-semibold text-gray-800 relative">
             <button onclick="showPage('page-overview')" id="nav-page-overview"
               class="p-2 hover:text-blue-700 focus:text-blue-700 focus:outline-none">Overview</button>
-            <button onclick="showPage('page-phase1')" id="nav-page-phase1"
-              class="p-2 hover:text-blue-700 focus:text-blue-700 focus:outline-none">Phase 1</button>
-            <button onclick="showPage('page-phase2')" id="nav-page-phase2"
-              class="p-2 hover:text-blue-700 focus:text-blue-700 focus:outline-none">Phase 2</button>
-            <button onclick="showPage('page-phase3')" id="nav-page-phase3"
-              class="p-2 hover:text-blue-700 focus:text-blue-700 focus:outline-none">Phase 3</button>
-
+            <!-- Dropdown: Phase -->
+            <div class="relative" data-dropdown>
+              <button type="button" data-dropdown-button aria-expanded="false" class="p-2 hover:text-blue-700 focus:text-blue-700 focus:outline-none inline-flex items-center">
+                Phase
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div data-dropdown-menu class="absolute hidden left-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
+                <a href="#" onclick="showPage('page-phase1')" id="nav-page-phase1" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Phase 1</a>
+                <a href="#" onclick="showPage('page-phase2')" id="nav-page-phase2" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Phase 2</a>
+                <a href="#" onclick="showPage('page-phase3')" id="nav-page-phase3" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Phase 3</a>
+              </div>
+            </div>
             <!-- Dropdown: Other -->
-            <div class="relative group">
-              <button class="p-2 hover:text-blue-700 focus:text-blue-700 focus:outline-none inline-flex items-center">
+            <div class="relative" data-dropdown>
+              <button type="button" data-dropdown-button aria-expanded="false" class="p-2 hover:text-blue-700 focus:text-blue-700 focus:outline-none inline-flex items-center">
                 Other
                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <!-- Dropdown Menu -->
-              <div class="absolute hidden group-hover:block right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
+              <div data-dropdown-menu class="absolute hidden right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
                 <a href="#" onclick="showPage('page-submit')" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">How to Submit</a>
+                <a href="#" onclick="showPage('page-status')" id="nav-page-status" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Status</a>
                 <a href="./goodCodingTips.html" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Good Coding Tips</a>
                 <a href="./peerMarking.html" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Peer Marking</a>
                 <a href="./top1000words.html" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Top 1000 Words</a>
@@ -388,12 +396,19 @@
         </div>
       </div>
 
+      <!-- PAGE 6: STATUS -->
+      <div id="page-status" class="page">
+        <div class="section-box">
+          <h2 class="text-3xl font-bold mb-4 text-blue-700">Status</h2>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR1Dq86WXvVR7-t_XhZOVAXmPwJntLjlk4-cluQRd93za2JnYwahHb558VdON3cmhmV_JIEz8cA5_Yu/pubhtml?widget=true&amp;headers=false" class="w-full h-[70vh] border border-gray-300 rounded-lg" title="Status Spreadsheet"></iframe>
+        </div>
+      </div>
     </main>
   </div>
 
   <!-- NAVIGATION SCRIPT -->
   <script>
-    const pages = ['page-overview', 'page-phase1', 'page-phase2', 'page-phase3', 'page-submit'];
+    const pages = ['page-overview', 'page-phase1', 'page-phase2', 'page-phase3', 'page-submit', 'page-status'];
 
     function showPage(pageId) {
       // Hide all pages
@@ -422,11 +437,56 @@
         navButton.classList.remove('text-gray-700');
       }
 
+      closeAllDropdowns();
+
       // Scroll to top when changing pages
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    function closeAllDropdowns() {
+      const menus = document.querySelectorAll('[data-dropdown-menu]');
+      const buttons = document.querySelectorAll('[data-dropdown-button]');
+
+      menus.forEach(menu => menu.classList.add('hidden'));
+      buttons.forEach(button => button.setAttribute('aria-expanded', 'false'));
+    }
+
+    function toggleDropdown(dropdown) {
+      const menu = dropdown.querySelector('[data-dropdown-menu]');
+      const button = dropdown.querySelector('[data-dropdown-button]');
+      const shouldOpen = menu.classList.contains('hidden');
+
+      closeAllDropdowns();
+      if (shouldOpen) {
+        menu.classList.remove('hidden');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+      const dropdowns = document.querySelectorAll('[data-dropdown]');
+
+      dropdowns.forEach(dropdown => {
+        const button = dropdown.querySelector('[data-dropdown-button]');
+
+        if (button) {
+          button.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleDropdown(dropdown);
+          });
+        }
+      });
+
+      document.addEventListener('click', () => {
+        closeAllDropdowns();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeAllDropdowns();
+        }
+      });
+
       showPage('page-overview');
     });
   </script>
