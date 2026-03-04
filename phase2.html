@@ -54,15 +54,59 @@
 
     <main class="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
       <section class="section-box">
+        <h3 class="mb-4 text-3xl font-bold text-blue-700">Overview</h3>
+        <p class="mb-6 text-gray-700">
+          Phase Two is all about encryption, decryption and Caesar ciphers.
+        </p>
+        <p class="mb-6 text-gray-700">
+          In this phase you will develop <strong>four Python programs</strong> that demonstrate how a
+          <strong>Caesar cipher</strong> works and how encrypted messages can be attacked.
+        </p>
+
+        <h3 class="mb-4 mt-10 text-2xl font-bold text-blue-700">Definitions</h3>
+        <div class="space-y-5 text-gray-700">
+          <p>
+            <strong>Encryption</strong> is the process of converting readable text (called <strong>plaintext</strong>)
+            into an unreadable form (called <strong>ciphertext</strong>) so that the message cannot be understood if it is intercepted.
+          </p>
+          <p>
+            <strong>Decryption</strong> is the reverse process. It converts ciphertext back into the original plaintext
+            using the correct key.
+          </p>
+        </div>
+
+        <div class="mt-10">
+          <h3 class="mb-4 text-2xl font-bold text-blue-700">Caesar Cipher</h3>
+          <div class="md:flex md:items-start md:gap-6">
+            <div class="md:flex-1">
+              <p class="mb-5 text-gray-700">
+                The <strong>Caesar cipher</strong> is one of the earliest known encryption methods. It works by
+                <strong>shifting each letter of the alphabet by a fixed number of positions</strong>, known as the
+                <strong>offset</strong> or <strong>key</strong>.
+              </p>
+              <p class="mb-4 text-gray-700">
+                For example, if the key is <strong>3</strong>, each letter is shifted three places forward in the alphabet:
+              </p>
+              <div class="mb-5 max-w-md rounded-lg border border-gray-200 bg-gray-50 p-4 text-lg text-gray-800">
+                <p>Plaintext: HELLO</p>
+                <p>Ciphertext: KHOOR</p>
+              </div>
+              <p class="text-gray-700">
+                A physical example of this method is the <strong>brass Caesar cipher wheel</strong>, where two rotating
+                alphabet rings allow the user to align letters according to the chosen offset.
+              </p>
+            </div>
+            <div class="mt-4 flex justify-center md:mt-0 md:w-[200px] md:flex-none md:justify-end">
+              <img src="./images/brass.png" alt="Brass Caesar cipher wheel" class="w-full max-w-[200px] rounded-lg">
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 border-t border-gray-200 pt-6">
         <p class="mb-6 text-gray-700">
           You will develop four Python programs for Phase 2. Each program must use the specified filename format where
           <strong>[StudentNumber]</strong> is replaced with your student number.
         </p>
-
-        <div class="mb-8 text-center">
-          <img src="./images/brass.png" alt="Brass Caesar cipher" class="mx-auto w-full max-w-2xl rounded-lg border border-gray-200 shadow-md">
-          <p class="mt-3 text-sm text-gray-600">Reference image: brass Caesar cipher wheel.</p>
-        </div>
 
         <div class="space-y-8">
           <div>
@@ -112,6 +156,7 @@
             <li>Include input prompts as specified above.</li>
             <li>Provide clear user messages for both success and failure cases.</li>
           </ul>
+        </div>
         </div>
       </section>
     </main>
