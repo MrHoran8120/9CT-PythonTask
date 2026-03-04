@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 1 | 9CT Python Assessment</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    .section-box {
+      background-color: white;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen">
+    <header class="sticky top-0 z-50 bg-gray-100 border-b border-gray-300 shadow-md">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <h1 class="text-2xl font-extrabold text-blue-800">9CT Task 4: Python Assessment</h1>
+          <div class="flex flex-wrap gap-2 text-sm font-semibold text-gray-800">
+            <a href="./index.html" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Overview</a>
+            <a href="./phase1.html" class="rounded-md bg-blue-700 px-3 py-2 text-white">Phase 1</a>
+            <a href="./phase2.html" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Phase 2</a>
+            <a href="./phase3.html" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Phase 3</a>
+            <a href="./index.html#submit" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">How to Submit</a>
+            <a href="./index.html#status" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Status</a>
+            <a href="./goodCodingTips.html" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Good Coding Tips</a>
+            <a href="./peerMarking.html" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Peer Marking</a>
+            <a href="./top1000words.html" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Top 1000 Words</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="bg-blue-700 py-14 text-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-100">Phase 1</p>
+        <h2 class="mt-2 text-4xl font-extrabold">Reverse Engineering &amp; Menu System</h2>
+        <p class="mt-3 text-lg text-blue-100">Weighting: 80%</p>
+      </div>
+    </div>
+
+    <main class="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+      <section class="section-box">
+        <h3 class="mb-3 border-b border-gray-300 pb-2 text-2xl font-bold">Core Objective</h3>
+        <p class="mb-4 text-gray-700">
+          You must observe the behaviour of the original program and <strong>reproduce the output exactly</strong> under all conditions,
+          including spacing, punctuation, and capitalisation.
+        </p>
+
+        <h4 class="mt-6 mb-3 text-xl font-semibold text-gray-800">Type of Program</h4>
+        <p class="mb-4 text-gray-700">
+          The program you will receive is a <strong>menu program that runs in a terminal</strong>.
+          You have already worked with terminal sessions where you use the <strong>keyboard</strong> rather than the mouse
+          to interact with programs. The menu lists numbered options; users select one by typing the number and pressing
+          <kbd>Enter</kbd>.
+          For more about terminal-based menu programs, visit
+          <a href="./terminalMenu.html" class="text-blue-700 underline hover:text-blue-900">Terminal Menu Overview</a>.
+        </p>
+
+        <h4 class="mt-6 mb-3 text-xl font-semibold text-gray-800">Implementation Steps</h4>
+        <ol class="ml-4 mb-8 list-inside list-decimal space-y-4 text-gray-700">
+          <li>
+            <strong>Menu Options 1 - 4:</strong><br>
+            For these four options on the menu, you <strong>do not need to create a menu program</strong>.
+            Instead, create a separate Python file that produces the exact output required, including
+            "<strong>Start of Output</strong>" and "<strong>End of Output</strong>" markers.
+            <div class="mt-3 mb-5 text-center">
+              <img src="./images/helloworld.png" alt="Example output for Option 1 - Hello World" class="mx-auto max-w-md rounded-lg border border-gray-200 shadow-md">
+            </div>
+            <p>Your Python script should look similar to this example:</p>
+            <div class="mt-3 mb-2 text-center">
+              <img src="./images/hwprog.png" alt="Example Python code for Hello World program" class="mx-auto max-w-md rounded-lg border border-gray-200 shadow-md">
+            </div>
+          </li>
+          <li>
+            <strong>Menu Integration:</strong><br>
+            After all four standalone programs have been marked as complete, integrate them into a single comprehensive
+            menu-based system. Each menu option must be contained in its own <strong>function</strong>.
+            <div class="mt-4 text-center">
+              <img src="./images/menu.png" alt="Example of menu program running in terminal" class="mx-auto max-w-md rounded-lg border border-gray-200 shadow-md">
+            </div>
+          </li>
+        </ol>
+
+        <h4 class="mt-6 mb-3 text-xl font-semibold text-gray-800">Peer Marking</h4>
+        <p class="mb-4 text-gray-700">
+          For each Phase 1 option, get a classmate to check your output against the model as soon as you finish.
+          Once you are marked competent, you can help mark others the same way.
+        </p>
+        <p class="text-gray-700">
+          Full details and rules are on the <a href="./peerMarking.html" class="text-blue-700 underline hover:text-blue-900">Peer Marking guide</a>.
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

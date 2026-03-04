@@ -14,12 +14,6 @@
       background-color: #f8fafc;
       color: #1e293b;
     }
-    .page { display: none; }
-    .active-nav {
-      border-bottom: 3px solid #1d4ed8;
-      color: #1d4ed8;
-      font-weight: 700;
-    }
     .section-box {
       background-color: white;
       border-radius: 0.75rem;
@@ -27,71 +21,35 @@
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
                   0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
-    .marker-rule {
-      border-left: 4px solid #ea580c;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-      background-color: #fef3c7;
-      padding: 1rem;
-      border-radius: 0.5rem;
+    table {
+      color: #1e293b;
     }
-    table { color: #1e293b; }
   </style>
 </head>
 <body>
-
-  <div id="app" class="min-h-screen">
-
-    <!-- NAVBAR -->
+  <div class="min-h-screen">
     <header class="sticky top-0 z-50 bg-gray-100 border-b border-gray-300 shadow-md">
-      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-        <div class="flex justify-between items-center h-16">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <h1 class="text-2xl font-extrabold text-blue-800">9CT Task 4: Python Assessment</h1>
-
-          <!-- Main Navigation -->
-          <div class="flex space-x-4 md:space-x-8 text-sm md:text-base font-semibold text-gray-800 relative">
-            <button onclick="showPage('page-overview')" id="nav-page-overview"
-              class="p-2 hover:text-blue-700 focus:text-blue-700 focus:outline-none">Overview</button>
-            <!-- Dropdown: Phase -->
-            <div class="relative" data-dropdown>
-              <button type="button" data-dropdown-button aria-expanded="false" class="p-2 hover:text-blue-700 focus:text-blue-700 focus:outline-none inline-flex items-center">
-                Phase
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div data-dropdown-menu class="absolute hidden left-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
-                <a href="#" onclick="showPage('page-phase1')" id="nav-page-phase1" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Phase 1</a>
-                <a href="#" onclick="showPage('page-phase2')" id="nav-page-phase2" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Phase 2</a>
-                <a href="#" onclick="showPage('page-phase3')" id="nav-page-phase3" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Phase 3</a>
-              </div>
-            </div>
-            <!-- Dropdown: Other -->
-            <div class="relative" data-dropdown>
-              <button type="button" data-dropdown-button aria-expanded="false" class="p-2 hover:text-blue-700 focus:text-blue-700 focus:outline-none inline-flex items-center">
-                Other
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <!-- Dropdown Menu -->
-              <div data-dropdown-menu class="absolute hidden right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
-                <a href="#" onclick="showPage('page-submit')" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">How to Submit</a>
-                <a href="#" onclick="showPage('page-status')" id="nav-page-status" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Status</a>
-                <a href="./goodCodingTips.html" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Good Coding Tips</a>
-                <a href="./peerMarking.html" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Peer Marking</a>
-                <a href="./top1000words.html" class="block px-4 py-2 hover:bg-gray-100 text-gray-800">Top 1000 Words</a>
-              </div>
-            </div>
+          <div class="flex flex-wrap gap-2 text-sm font-semibold text-gray-800">
+            <a href="./index.html" class="rounded-md bg-blue-700 px-3 py-2 text-white">Overview</a>
+            <a href="./phase1.html" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Phase 1</a>
+            <a href="./phase2.html" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Phase 2</a>
+            <a href="./phase3.html" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Phase 3</a>
+            <a href="#submit" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">How to Submit</a>
+            <a href="#status" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Status</a>
+            <a href="./goodCodingTips.html" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Good Coding Tips</a>
+            <a href="./peerMarking.html" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Peer Marking</a>
+            <a href="./top1000words.html" class="rounded-md px-3 py-2 hover:bg-blue-50 hover:text-blue-700">Top 1000 Words</a>
           </div>
         </div>
       </nav>
     </header>
 
-    <!-- Banner -->
-    <div class="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 sm:py-20 lg:py-24 overflow-hidden">
-      <div class="absolute inset-0 bg-gray-800 z-0"></div>
-      <div class="absolute inset-0 z-10 opacity-15">
+    <div class="relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-700 py-16 text-white sm:py-20 lg:py-24">
+      <div class="absolute inset-0 bg-gray-800"></div>
+      <div class="absolute inset-0 opacity-15">
         <svg class="absolute inset-0 h-full w-full" fill="none" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
           <defs>
             <pattern id="pattern-hexagons" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
@@ -101,404 +59,129 @@
           <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-hexagons)"></rect>
         </svg>
       </div>
-      <div class="relative z-20 text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-4">
+      <div class="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 class="mb-4 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
           Unleash Your Python Prowess
         </h2>
-        <p class="text-lg sm:text-xl lg:text-2xl font-light opacity-95 max-w-3xl mx-auto">
-          Dive into reverse engineering, build powerful encryption tools, and craft your own game.
+        <p class="mx-auto max-w-3xl text-lg font-light opacity-95 sm:text-xl lg:text-2xl">
+          Dive into reverse engineering, build encryption tools, and craft your own game.
         </p>
       </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <main class="mx-auto max-w-7xl space-y-10 px-4 py-10 sm:px-6 lg:px-8">
+      <section class="section-box">
+        <h2 class="mb-4 text-3xl font-bold text-blue-700">Assessment Task 4: The Python Challenge</h2>
+        <p class="mb-6 text-xl font-medium text-gray-600">Year 9 Computing Technology // Python Programming</p>
+        <p class="mb-8 inline-block rounded-lg bg-orange-100 p-3 text-2xl font-extrabold text-orange-700 shadow-sm">DUE: Term 2 2026</p>
 
-      <!-- PAGE 1: OVERVIEW -->
-      <div id="page-overview" class="page">
-        <div class="section-box">
-          <h2 class="text-3xl font-bold mb-4 text-blue-700">Assessment Task 4: The Python Challenge</h2>
-          <p class="text-xl mb-6 font-medium text-gray-600">Year 9 Computing Technology // Python Programming</p>
-          <p class="text-2xl font-extrabold bg-orange-100 text-orange-700 p-3 rounded-lg inline-block mb-8 shadow-sm">DUE: Term 2 2026</p>
+        <h3 class="mb-3 border-b border-gray-300 pb-2 text-2xl font-bold">Unveiling the Python Challenge</h3>
+        <p class="mb-6 text-gray-700">
+          Welcome to the ultimate Python test. Your mission is to analyse, replicate, and decrypt.
+          This task simulates real-world problem-solving where logic and <strong>precision</strong> are key.
+        </p>
 
-          <h3 class="text-2xl font-bold mb-3 border-b border-gray-300 pb-2">Unveiling the Python Challenge 🐍</h3>
-          <p class="mb-6 text-gray-700">
-            Welcome to the ultimate Python test. Your mission is to analyse, replicate, and decrypt. 
-            This task simulates real-world problem-solving where logic and <strong>precision</strong> are key.
-          </p>
-
-          <div class="grid md:grid-cols-3 gap-6 mb-10">
-            <div class="p-6 bg-blue-50 rounded-lg text-center border-t-4 border-blue-600 shadow-md">
-              <p class="text-sm font-semibold text-blue-600 uppercase">THE CORE CHALLENGE</p>
-              <h4 class="text-2xl font-bold my-2">Reverse Engineering</h4>
-              <p class="text-6xl font-extrabold text-blue-700 my-4">80%</p>
-              <p class="text-sm text-gray-600">Analyse a compiled program without source code. Replicate its exact behaviour and output. This phase is peer assessed.</p>
-            </div>
-            <div class="p-6 bg-green-50 rounded-lg text-center border-t-4 border-green-600 shadow-md">
-              <p class="text-sm font-semibold text-green-600 uppercase">CYBER SECURITY BASICS</p>
-              <h4 class="text-2xl font-bold my-2">Encrypt / Decrypt</h4>
-              <p class="text-6xl font-extrabold text-green-700 my-4">15%</p>
-              <p class="text-sm text-gray-600">Develop tools to manipulate text files using Caesar ciphers, including "Known Word" and "Brute Force" decryption tasks.</p>
-            </div>
-            <div class="p-6 bg-yellow-50 rounded-lg text-center border-t-4 border-yellow-600 shadow-md">
-              <p class="text-sm font-semibold text-yellow-600 uppercase">CREATIVE EXTENSION</p>
-              <h4 class="text-2xl font-bold my-2">Game Development</h4>
-              <p class="text-6xl font-extrabold text-yellow-700 my-4">5%</p>
-              <p class="text-sm text-gray-600">If time allows, bring your coding skills to life by creating a simple game like Hangman or Word Guess.</p>
-            </div>
-          </div>
-
-          <div class="mt-8 border-t border-gray-200 pt-6">
-            <h3 class="text-2xl font-bold mb-3 text-blue-700">Overview</h3>
-            <p class="text-gray-700 mb-4">
-              This assessment task consists of three sequential phases. Each phase must be completed before moving on to the next.
-              Phases 1 and 2 are peer marked and provide the foundation for later work.
-            </p>
-            <ul class="list-disc list-inside space-y-1 text-gray-700 ml-4">
-              <li>Algorithms</li>
-              <li>Loops</li>
-              <li>Conditionals</li>
-              <li>User input</li>
-              <li>Functions</li>
-              <li>Commenting and code readability</li>
-            </ul>
-          </div>
-
-          <div class="mt-10 border-t border-gray-200 pt-6">
-            <h3 class="text-2xl font-bold mb-3 text-blue-700">Marks and Weighting</h3>
-            <ul class="list-disc list-inside space-y-1 text-gray-700 ml-4">
-              <li><strong>Phase 1:</strong> 80%</li>
-              <li><strong>Phase 2:</strong> 15%</li>
-              <li><strong>Phase 3:</strong> 5%</li>
-            </ul>
-            <p class="text-gray-700 mt-4">
-              Phase 1 carries the most weight and should be prioritised. 
-              Many students in previous years did not have time to complete Phase 3, so focus on finishing the early stages first.
-            </p>
-          </div>
+        <div class="mb-10 grid gap-6 md:grid-cols-3">
+          <a href="./phase1.html" class="rounded-lg border-t-4 border-blue-600 bg-blue-50 p-6 text-center shadow-md transition hover:-translate-y-1 hover:shadow-lg">
+            <p class="text-sm font-semibold uppercase text-blue-600">The Core Challenge</p>
+            <h4 class="my-2 text-2xl font-bold">Reverse Engineering</h4>
+            <p class="my-4 text-6xl font-extrabold text-blue-700">80%</p>
+            <p class="text-sm text-gray-600">Analyse a compiled program without source code and reproduce its exact behaviour. This phase is peer assessed.</p>
+          </a>
+          <a href="./phase2.html" class="rounded-lg border-t-4 border-green-600 bg-green-50 p-6 text-center shadow-md transition hover:-translate-y-1 hover:shadow-lg">
+            <p class="text-sm font-semibold uppercase text-green-600">Cyber Security Basics</p>
+            <h4 class="my-2 text-2xl font-bold">Encrypt / Decrypt</h4>
+            <p class="my-4 text-6xl font-extrabold text-green-700">15%</p>
+            <p class="text-sm text-gray-600">Develop Caesar cipher tools, including known-word and brute-force decryption tasks.</p>
+          </a>
+          <a href="./phase3.html" class="rounded-lg border-t-4 border-yellow-600 bg-yellow-50 p-6 text-center shadow-md transition hover:-translate-y-1 hover:shadow-lg">
+            <p class="text-sm font-semibold uppercase text-yellow-600">Creative Extension</p>
+            <h4 class="my-2 text-2xl font-bold">Game Development</h4>
+            <p class="my-4 text-6xl font-extrabold text-yellow-700">5%</p>
+            <p class="text-sm text-gray-600">If time allows, create a simple game such as Hangman or Word Guess.</p>
+          </a>
         </div>
-      </div>
-                <!-- PAGE 2: PHASE 1 - REVERSE ENGINEERING -->
-            <div id="page-phase1" class="page">
-            <div class="section-box">
-                <h2 class="text-3xl font-bold mb-4 text-blue-700">Phase 1: Reverse Engineering & Menu System</h2>
-                <p class="text-lg mb-6 font-semibold text-blue-600">Weighting: 80%</p>
 
-                <h3 class="text-2xl font-bold mb-3 border-b border-gray-300 pb-2">Core Objective</h3>
-                <p class="mb-4 text-gray-700">
-                You must observe the behaviour of the original program and <strong>reproduce the output exactly</strong> under all conditions,
-                including spacing, punctuation, and capitalisation.
-                </p>
-
-                <h4 class="text-xl font-semibold mt-6 mb-3 text-gray-800">Type of Program</h4>
-                <p class="mb-4 text-gray-700">
-                The program you will receive is a <strong>menu program that runs in a terminal</strong>.  
-                You have already worked with terminal sessions where you use the <strong>keyboard</strong> rather than the mouse
-                to interact with programs. The menu lists numbered options; users select one by typing the number and pressing
-                <kbd>Enter</kbd>.  
-                For more about terminal-based menu programs, visit  
-                <a href="./terminalMenu.html" class="text-blue-700 underline hover:text-blue-900">Terminal Menu Overview</a>.
-                </p>
-
-                <h4 class="text-xl font-semibold mt-6 mb-3 text-gray-800">Implementation Steps</h4>
-                <ol class="list-decimal list-inside space-y-4 ml-4 mb-8 text-gray-700">
-                <li>
-                    <strong>Menu Options 1 – 4:</strong><br>
-                    For these four options on the menu, you <strong>do not need to create a menu program</strong>.  
-                    Instead, create a separate Python file that produces the exact output required, including  
-                    “<strong>Start of Output</strong>” and “<strong>End of Output</strong>” markers.  
-                    <br><br>
-                    <p><strong>Example:</strong> Option 1 output:</p>
-                    <div class="mt-3 mb-5 text-center">
-                    <img src="images/helloworld.png" alt="Example output for Option 1 – Hello World"
-                        class="mx-auto rounded-lg shadow-md border border-gray-200 max-w-md">
-                    </div>
-                    <p>Your Python script should look similar to this example:</p>
-                    <div class="mt-3 mb-2 text-center">
-                    <img src="images/hwprog.png" alt="Example Python code for Hello World program"
-                        class="mx-auto rounded-lg shadow-md border border-gray-200 max-w-md">
-                    </div>
-                </li>
-
-                <li>
-                    <strong>Menu Integration:</strong><br>
-                    After all four standalone programs have been marked as complete, integrate them into a single comprehensive
-                    menu-based system. Each menu option must be contained in its own <strong>function</strong>.  
-                    <br><br>
-                    <div class="mt-4 text-center">
-                    <img src="images/menu.png" alt="Example of menu program running in terminal"
-                        class="mx-auto rounded-lg shadow-md border border-gray-200 max-w-md">
-                    </div>
-                </li>
-                </ol>
-
-                <h4 class="text-xl font-semibold mt-6 mb-3 text-gray-800">Peer Marking (Quick Overview)</h4>
-                <p class="mb-4 text-gray-700">
-                    For each Phase 1 option, get a classmate to check your output against the model as soon as you finish; once you're marked competent, you can help mark others the same way.
-                </p>
-                <p class="text-gray-700">
-                    Full details and rules are on the <a href="./peerMarking.html" class="text-blue-700 underline hover:text-blue-900">Peer Marking guide</a>.
-                </p>
-            </div>
-            </div>
-
-      <!-- PAGE 3: PHASE 2 - ENCRYPT / DECRYPT -->
-      <div id="page-phase2" class="page">
-        <div class="section-box">
-          <h2 class="text-3xl font-bold mb-4 text-blue-700">Phase 2 — Program Requirements</h2>
-          <p class="text-lg mb-6 font-semibold text-green-600">Weighting: 15%</p>
-
-          <p class="mb-6 text-gray-700">
-            You will develop four Python programs for Phase 2. Each program must use the specified filename format where <strong>[StudentNumber]</strong> is replaced with your student number.
-          </p>
-
-          <div class="mb-8 text-center">
-            <img
-              src="./images/brass.png"
-              alt="Brass Caesar cipher"
-              class="mx-auto w-full max-w-2xl rounded-lg border border-gray-200 shadow-md"
-            >
-            <p class="mt-3 text-sm text-gray-600">Reference image: brass Caesar cipher wheel.</p>
-          </div>
-
-          <div class="space-y-8">
-            <div>
-              <h4 class="text-xl font-semibold text-gray-800">Encrypt — [StudentNumber]-encrypt.py</h4>
-              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-                <li>Prompt the user for an input file name, output filename and an integer offset (the key).</li>
-                <li>read in the input file and apply the offset as the cypher key</li>
-                <li>Write the encrypted content to the output file.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 class="text-xl font-semibold text-gray-800">Decrypt — [StudentNumber]-decrypt.py</h4>
-              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-                <li>Read an encrypted input file.</li>
-                <li>Prompt the user for an output filename and the integer offset (the key).</li>
-                <li>Decrypt the content and write the decrypted message to the output file.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 class="text-xl font-semibold text-gray-800">Known-Word Attack — [StudentNumber]-knownValue.py</h4>
-              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-                <li>Simulate an intercepted encrypted message where one plaintext word is known.</li>
-                <li>Prompt the user for the encrypted filename and the desired decrypted output filename.</li>
-                <li>Use the known word to deduce the key, decrypt the message, and write the result to the output file.</li>
-                <li>Print a clear success message if decryption succeeds or an informative failure message if it does not.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 class="text-xl font-semibold text-gray-800">Brute-Force (Dictionary) Attack — [StudentNumber]-dictionaryValue.py</h4>
-              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-                <li>Simulate an intercepted encrypted message when no plaintext words are known.</li>
-                <li>Prompt the user for: encrypted filename, decrypted output filename, and dictionary filename.</li>
-                <li>Attempt all 25 possible offsets, testing each decryption against words from the supplied dictionary (use the <a href="./top1000words.html" class="text-blue-700 underline underline-offset-4 font-semibold hover:text-blue-900">Top 1000 Words</a> page).</li>
-                <li>To reduce false positives, ignore dictionary words shorter than 3 characters.</li>
-                <li>If a correct key is found, write the decrypted message to the output file and print a success message; otherwise print a failure message.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="mt-10 border-t border-gray-200 pt-6">
-            <h4 class="text-xl font-semibold text-gray-800">General requirements (all programs)</h4>
-            <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-              <li>Use the exact filename formats supplied.</li>
-              <li>Include input prompts as specified above.</li>
-              <li>Provide clear user messages for both success and failure cases.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- PAGE 4: PHASE 3 - GAME DEVELOPMENT -->
-      <div id="page-phase3" class="page">
-        <div class="section-box">
-          <h2 class="text-3xl font-bold mb-4 text-blue-700">Phase 3: Game Development</h2>
-          <p class="text-lg mb-6 font-semibold text-yellow-600">Weighting: 5%</p>
-
-          <h3 class="text-2xl font-bold mb-3 border-b border-gray-300 pb-2">Objective: Write a Simple Game</h3>
+        <div class="border-t border-gray-200 pt-6">
+          <h3 class="mb-3 text-2xl font-bold text-blue-700">Overview</h3>
           <p class="mb-4 text-gray-700">
-            If time allows, develop a simple, fully functional game in Python.  
-            <strong>Hangman</strong> or a word-guessing game are excellent options.
+            This assessment task consists of three sequential phases. Each phase must be completed before moving on to the next.
+            Phases 1 and 2 are peer marked and provide the foundation for later work.
           </p>
-
-          <ul class="list-disc list-inside space-y-1 ml-4 mb-6 text-gray-700">
-            <li><strong>Focus:</strong> Ensure the game is functional, structured, and commented clearly.</li>
-            <li>You will be marked on complexity, completeness, and adherence to good coding techniques.</li>
+          <ul class="ml-4 list-inside list-disc space-y-1 text-gray-700">
+            <li>Algorithms</li>
+            <li>Loops</li>
+            <li>Conditionals</li>
+            <li>User input</li>
+            <li>Functions</li>
+            <li>Commenting and code readability</li>
           </ul>
-
-          <div class="mt-10 border-t border-gray-200 pt-6">
-            <h3 class="text-2xl font-bold mb-3 text-blue-700">Hangman Tips</h3>
-            <p class="text-gray-700 mb-4">
-              If you’re unsure which game to create, start with <strong>Hangman</strong>. It can be developed in stages so you can test as you go.
-            </p>
-
-            <h4 class="text-xl font-semibold text-gray-800 mb-2">Stage 1 – Basic Text Version</h4>
-            <p class="text-gray-700 mb-4">
-              Build a text-only version that shows messages like <code>You have 3 / 6 guesses remaining</code>.  
-              A friend inputs the secret word. Focus on checking letters, tracking guesses, and determining win/lose conditions.
-            </p>
-
-            <h4 class="text-xl font-semibold text-gray-800 mb-2">Stage 2 – Add ASCII Graphics</h4>
-            <p class="text-gray-700 mb-4">
-              Add <strong>ASCII art</strong> to visualise the hangman figure. Each incorrect guess updates the display.  
-              You can make the art as simple or creative as you like.
-            </p>
-
-            <h4 class="text-xl font-semibold text-gray-800 mb-2">Stage 3 – Automatic Word Selection</h4>
-            <p class="text-gray-700">
-              Replace manual word entry with a list of possible words. Have the program randomly select one each round so the game is self-contained.
-            </p>
-          </div>
         </div>
-      </div>
 
-      <!-- PAGE 5: HOW TO SUBMIT -->
-      <div id="page-submit" class="page">
-        <div class="section-box">
-          <h2 class="text-3xl font-bold mb-4 text-blue-700">How to Submit & General Rules</h2>
-
-          <h3 class="text-2xl font-bold mb-3 border-b border-gray-300 pb-2">General Coding & Submission Rules</h3>
-          <ul class="list-disc list-inside space-y-2 ml-4 text-gray-700">
-            <li class="font-bold text-red-600">
-              Commenting is mandatory. See the Good Coding Tips page for guidance.
-            </li>
-            <li><strong>Comments:</strong> All programs, functions, and complex logic must be commented. Failure to do so will severely reduce marks.</li>
-            <li><strong>Variables:</strong> Use clear, descriptive names (e.g. <code>user_choice</code> instead of <code>uc</code>).</li>
-            <li><strong>Output Match:</strong> Your program’s output must <strong>exactly match</strong> the model output.</li>
+        <div class="mt-10 border-t border-gray-200 pt-6">
+          <h3 class="mb-3 text-2xl font-bold text-blue-700">Marks and Weighting</h3>
+          <ul class="ml-4 list-inside list-disc space-y-1 text-gray-700">
+            <li><strong>Phase 1:</strong> 80%</li>
+            <li><strong>Phase 2:</strong> 15%</li>
+            <li><strong>Phase 3:</strong> 5%</li>
           </ul>
-
-          <h4 class="text-xl font-semibold mt-6 mb-3 text-gray-800">Final File Naming Summary</h4>
-          <table class="min-w-full divide-y divide-gray-300 rounded-lg overflow-hidden mt-3 border">
-            <thead class="bg-gray-100">
-              <tr>
-                <th class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-gray-700">Phase</th>
-                <th class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-gray-700">File / ZIP Name</th>
-                <th class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-gray-700">Contents</th>
-              </tr>
-            </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
-              <tr>
-                <td class="px-6 py-4 whitespace-nowrap">Phase 1 (Menu)</td>
-                <td class="px-6 py-4 whitespace-nowrap text-blue-600">[StudentNumber]-Phase1.py</td>
-                <td class="px-6 py-4 text-sm text-gray-700">Single Python file containing the menu system and all functions.</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-4 whitespace-nowrap">Phase 2 Submission</td>
-                <td class="px-6 py-4 whitespace-nowrap text-blue-600">[StudentNumber]-Phase2.zip</td>
-                <td class="px-6 py-4 text-sm text-gray-700">Four separate Python files (-encrypt, -decrypt, etc.).</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-4 whitespace-nowrap">Phase 3 Submission</td>
-                <td class="px-6 py-4 whitespace-nowrap text-blue-600">[StudentNumber]-Phase3.zip</td>
-                <td class="px-6 py-4 text-sm text-gray-700">Python game file (e.g. <code>-game.py</code>).</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <p class="mt-6 text-base text-gray-600">
-            <strong>Note:</strong> Replace <code>[StudentNumber]</code> with your actual ID (e.g. 99999999).  
-            ZIP files must not contain subdirectories or hidden system files.
+          <p class="mt-4 text-gray-700">
+            Phase 1 carries the most weight and should be prioritised. Many students in previous years did not have time to complete
+            Phase 3, so focus on finishing the early stages first.
           </p>
         </div>
-      </div>
+      </section>
 
-      <!-- PAGE 6: STATUS -->
-      <div id="page-status" class="page">
-        <div class="section-box">
-          <h2 class="text-3xl font-bold mb-4 text-blue-700">Status</h2>
-          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR1Dq86WXvVR7-t_XhZOVAXmPwJntLjlk4-cluQRd93za2JnYwahHb558VdON3cmhmV_JIEz8cA5_Yu/pubhtml?gid=821890824&single=true" class="w-full h-[70vh] border border-gray-300 rounded-lg" title="Status Spreadsheet"></iframe>
-        </div>
-      </div>
+      <section id="submit" class="section-box scroll-mt-24">
+        <h2 class="mb-4 text-3xl font-bold text-blue-700">How to Submit &amp; General Rules</h2>
+
+        <h3 class="mb-3 border-b border-gray-300 pb-2 text-2xl font-bold">General Coding &amp; Submission Rules</h3>
+        <ul class="ml-4 list-inside list-disc space-y-2 text-gray-700">
+          <li class="font-bold text-red-600">Commenting is mandatory. See the Good Coding Tips page for guidance.</li>
+          <li><strong>Comments:</strong> All programs, functions, and complex logic must be commented. Failure to do so will severely reduce marks.</li>
+          <li><strong>Variables:</strong> Use clear, descriptive names (for example <code>user_choice</code> instead of <code>uc</code>).</li>
+          <li><strong>Output Match:</strong> Your program's output must <strong>exactly match</strong> the model output.</li>
+        </ul>
+
+        <h4 class="mt-6 mb-3 text-xl font-semibold text-gray-800">Final File Naming Summary</h4>
+        <table class="mt-3 min-w-full overflow-hidden rounded-lg border divide-y divide-gray-300">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-gray-700">Phase</th>
+              <th class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-gray-700">File / ZIP Name</th>
+              <th class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-gray-700">Contents</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 bg-white">
+            <tr>
+              <td class="whitespace-nowrap px-6 py-4">Phase 1 (Menu)</td>
+              <td class="whitespace-nowrap px-6 py-4 text-blue-600">[StudentNumber]-Phase1.py</td>
+              <td class="px-6 py-4 text-sm text-gray-700">Single Python file containing the menu system and all functions.</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-6 py-4">Phase 2 Submission</td>
+              <td class="whitespace-nowrap px-6 py-4 text-blue-600">[StudentNumber]-Phase2.zip</td>
+              <td class="px-6 py-4 text-sm text-gray-700">Four separate Python files (-encrypt, -decrypt, etc.).</td>
+            </tr>
+            <tr>
+              <td class="whitespace-nowrap px-6 py-4">Phase 3 Submission</td>
+              <td class="whitespace-nowrap px-6 py-4 text-blue-600">[StudentNumber]-Phase3.zip</td>
+              <td class="px-6 py-4 text-sm text-gray-700">Python game file (for example <code>-game.py</code>).</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="mt-6 text-base text-gray-600">
+          <strong>Note:</strong> Replace <code>[StudentNumber]</code> with your actual ID (for example 99999999).
+          ZIP files must not contain subdirectories or hidden system files.
+        </p>
+      </section>
+
+      <section id="status" class="section-box scroll-mt-24">
+        <h2 class="mb-4 text-3xl font-bold text-blue-700">Status</h2>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR1Dq86WXvVR7-t_XhZOVAXmPwJntLjlk4-cluQRd93za2JnYwahHb558VdON3cmhmV_JIEz8cA5_Yu/pubhtml?gid=821890824&amp;single=true" class="h-[70vh] w-full rounded-lg border border-gray-300" title="Status Spreadsheet"></iframe>
+      </section>
     </main>
   </div>
-
-  <!-- NAVIGATION SCRIPT -->
-  <script>
-    const pages = ['page-overview', 'page-phase1', 'page-phase2', 'page-phase3', 'page-submit', 'page-status'];
-
-    function showPage(pageId) {
-      // Hide all pages
-      pages.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.display = 'none';
-      });
-
-      // Remove active nav class
-      pages.forEach(id => {
-        const navButton = document.getElementById(`nav-${id}`);
-        if (navButton) {
-          navButton.classList.remove('active-nav', 'text-blue-700');
-          navButton.classList.add('text-gray-700');
-        }
-      });
-
-      // Show selected page
-      const selectedPage = document.getElementById(pageId);
-      if (selectedPage) selectedPage.style.display = 'block';
-
-      // Add active class to selected button
-      const navButton = document.getElementById(`nav-${pageId}`);
-      if (navButton) {
-        navButton.classList.add('active-nav', 'text-blue-700');
-        navButton.classList.remove('text-gray-700');
-      }
-
-      closeAllDropdowns();
-
-      // Scroll to top when changing pages
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function closeAllDropdowns() {
-      const menus = document.querySelectorAll('[data-dropdown-menu]');
-      const buttons = document.querySelectorAll('[data-dropdown-button]');
-
-      menus.forEach(menu => menu.classList.add('hidden'));
-      buttons.forEach(button => button.setAttribute('aria-expanded', 'false'));
-    }
-
-    function toggleDropdown(dropdown) {
-      const menu = dropdown.querySelector('[data-dropdown-menu]');
-      const button = dropdown.querySelector('[data-dropdown-button]');
-      const shouldOpen = menu.classList.contains('hidden');
-
-      closeAllDropdowns();
-      if (shouldOpen) {
-        menu.classList.remove('hidden');
-        button.setAttribute('aria-expanded', 'true');
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const dropdowns = document.querySelectorAll('[data-dropdown]');
-
-      dropdowns.forEach(dropdown => {
-        const button = dropdown.querySelector('[data-dropdown-button]');
-
-        if (button) {
-          button.addEventListener('click', (event) => {
-            event.stopPropagation();
-            toggleDropdown(dropdown);
-          });
-        }
-      });
-
-      document.addEventListener('click', () => {
-        closeAllDropdowns();
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-          closeAllDropdowns();
-        }
-      });
-
-      showPage('page-overview');
-    });
-  </script>
-
 </body>
 </html>
